@@ -1,8 +1,10 @@
+import useTasks from '../hooks';
 import Checkbox  from './layout/Checkbox';
 
 
 const Tasks = () =>{
-    const tasks = [];
+    const {tasks} = useTasks('1');
+    console.log(tasks);
     let projectName ='';
     return(
         <div className="tasks" data-testid="tasks">
