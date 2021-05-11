@@ -4,7 +4,7 @@ import Checkbox  from './Checkbox';
 
 const Tasks = () =>{
     const {tasks} = useTasks('1');
-    console.log(tasks);
+
     let projectName ='';
     return(
         <div className="tasks" data-testid="tasks">

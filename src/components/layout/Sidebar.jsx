@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaChevronDown, FaInbox, FaRegCalendar, FaRegCalendarAlt } from 'react-icons/fa';
 import { useSelectedProjectValue } from '../../context';
+import { AddProject } from '../AddProject';
 import { Projects } from '../Projects';
 
 
@@ -21,7 +22,7 @@ const Sidebar = () => {
                 <h2>Projects</h2>
             </div>
             <ul className="sidebar__projects">{ showProjects && <Projects/> }</ul>
-            {showProjects && <Projects/>}
+            {showProjects && <AddProject/>}
         </div>
     )
 }
