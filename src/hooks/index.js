@@ -74,4 +74,5 @@ const useProjects = () => {
     return {projects, setProjects};
 }
 
+export { useProjects};
 export default useTasks;

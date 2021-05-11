@@ -1,5 +1,5 @@
 import useTasks from '../hooks';
-import Checkbox  from './layout/Checkbox';
+import Checkbox  from './Checkbox';
 
 
 const Tasks = () =>{
