@@ -1,18 +1,20 @@
-import { createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useProjects } from '../hooks';
 
-const ProjectsContext = createContext();
-const ProjectsProvider = ({children}) => {
-    const  { projects, setProjects } = useProjects();
+export const ProjectsContext = createContext();
+export const ProjectsProvider = ({ children }) => {
+  const { projects, setProjects } = useProjects();
 
-    return(
-        <ProjectsContext.Provider value={{projects, setProjects}}>
-            {children}
-        </ProjectsContext.Provider>
-    );
+  return (
+    <ProjectsContext.Provider value={{ projects, setProjects }}>
+      {children}
+    </ProjectsContext.Provider>
+  );
 };
 
-const useProjectsValue = () => useContext(ProjectsContext);
+export const useProjectsValue = () => useContext(ProjectsContext);
 
-
-export {ProjectsContext, ProjectsProvider, useProjectsValue};
+ProjectsProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

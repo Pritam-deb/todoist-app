@@ -1,19 +1,21 @@
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
+export const SelectedProjectContext = createContext();
+export const SelectedProjectProvider = ({ children }) => {
+  const [selectedProject, setSelectedProject] = useState('INBOX');
 
-const SelectedProjectContext = createContext();
-const SelectedProjectProvider = ({children}) => {
-    const  [ selectedProject, setSelectedProject ] = useState('INBOX');
-     
-    return(
-        <SelectedProjectContext.Provider value={{selectedProject, setSelectedProject}}>
-            {children}
-        </SelectedProjectContext.Provider>
-    );
+  return (
+    <SelectedProjectContext.Provider
+      value={{ selectedProject, setSelectedProject }}
+    >
+      {children}
+    </SelectedProjectContext.Provider>
+  );
 };
 
-const useSelectedProjectValue = () => useContext(SelectedProjectContext);
+export const useSelectedProjectValue = () => useContext(SelectedProjectContext);
 
-
-export {SelectedProjectContext, SelectedProjectProvider, useSelectedProjectValue};
-
+SelectedProjectProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
