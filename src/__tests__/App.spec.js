@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { App } from '../App';
 
-beforeEach(cleanup); // clean meeeeeeeeee!
+beforeEach(cleanup); //for cleaning up DOM after other test
 
 describe('<App />', () => {
   it('renders the application', () => {
